@@ -16,15 +16,19 @@ export default function Navbar() {
     <nav className="nav_container">
       <div className="nav_inner">
         {/* LOGO */}
-        <div className="nav_logo">
-          <Image
-            src="/images/logo__1.png"
-            alt="Grabovsky Fit Logo"
-            width={160}
-            height={60}
-            className="nav_logo_img"
-          />
-        </div>
+        <div
+              className="nav_logo"
+              onClick={() => window.location.reload()}
+              style={{ cursor: "pointer" }}
+            >
+              <Image
+                src="/images/logo__1.png"
+                alt="Grabovsky Fit Logo"
+                width={160}
+                height={60}
+                className="nav_logo_img"
+              />
+            </div>
 
         {/* LINKS */}
         <ul className="nav_links">
@@ -47,7 +51,12 @@ export default function Navbar() {
 
         {/* BUTTONS */}
         <div className="nav_buttons">
-          <button className="nav_getplan">{t("getPlan")}</button>
+        <button className="nav_getplan" onClick={() => {
+              document.getElementById("plans")?.scrollIntoView({ behavior: "smooth" });
+            }}>
+              {t("getPlan")}
+            </button>
+
 
           <button
             onClick={cycleLanguage}

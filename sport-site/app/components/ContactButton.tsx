@@ -19,7 +19,7 @@ export default function ContactButton() {
       {/* Meniul cu rețele */}
       <div className={`contact_menu ${open ? "show" : ""}`}>
         <a
-          href="https://t.me/yourtelegram"
+          href="https://t.me/grabovsky_fitness"
           target="_blank"
           rel="noopener noreferrer"
           className="contact_icon telegram"
@@ -27,7 +27,7 @@ export default function ContactButton() {
           <FaTelegramPlane />
         </a>
         <a
-          href="https://instagram.com/yourinstagram"
+          href="https://www.instagram.com/grabovsky.fit/"
           target="_blank"
           rel="noopener noreferrer"
           className="contact_icon instagram"
@@ -35,7 +35,7 @@ export default function ContactButton() {
           <FaInstagram />
         </a>
         <a
-          href="https://tiktok.com/@yourtiktok"
+          href="https://tiktok.com/@grabovsky.fit"
           target="_blank"
           rel="noopener noreferrer"
           className="contact_icon tiktok"

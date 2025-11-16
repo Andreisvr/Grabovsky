@@ -10,12 +10,15 @@ export default function TransformationsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const clients = [
-    "images/trs1.png",
-    "images/trs2.png",
-    "images/trs3.png",
-    "images/photo1.png",
-    "images/photo2.png",
-    "images/photo3.png",
+    "images/clients/r1.webp",
+    "images/clients/r2.webp",
+    "images/clients/r3.webp",
+   "images/clients/r4.webp",
+    "images/clients/r5.webp",
+    "images/clients/r6.webp",
+    "images/clients/r7.webp",
+    "images/clients/r8.webp",
+    
   ];
 
   // 🔍 Detectăm dacă e mobil

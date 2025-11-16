@@ -1,130 +1,247 @@
 /* === SECTION === */
 .plans_section {
-    background-color: #000;
-    color: #fff;
-    padding: 6rem 2rem;
+  background-color: #000;
+  color: #fff;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.plans_title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 4rem;
+}
+
+/* === GRID === */
+.plans_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 800px) {
+  .plans_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* === CARD BASE === */
+.plan_card {
+  position: relative;
+  border-radius: 2rem;
+  padding: 3rem 2.2rem;
+  text-align: left;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.plan_card:hover {
+  transform: translateY(-8px);
+}
+
+/* === CARD COLORS === */
+.plan_white {
+  background: #fff;
+  color: #000;
+}
+
+.plan_gold {
+  background: linear-gradient(180deg, #facc15, #eab308);
+  color: #000;
+}
+
+/* === TAG === */
+.plan_tag {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+}
+
+/* === TITLE === */
+.plan_title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1.4rem;
+}
+
+/* === MAIN BUTTON === */
+.plan_btn_main {
+  width: 50%;
+  padding: 0.4rem 1.0rem;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: #facc15;
+  color: #000;
+  margin-bottom: 2rem;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.plan_btn_main:hover {
+  background: #d4a40d;
+  transform: scale(1.05);
+}
+
+.plan_gold .plan_btn_main {
+  background: #000;
+  color: #facc15;
+}
+
+.plan_gold .plan_btn_main:hover {
+  background: #1a1a1a;
+}
+
+/* === DIVIDER === */
+.plan_divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.12);
+  margin-bottom: 1.7rem;
+}
+
+.plan_gold .plan_divider {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* === SHORT BENEFITS === */
+.short_list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem 0;
+}
+
+.short_list li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.check_icon {
+  margin-right: 0.6rem;
+  font-size: 1.3rem;
+  color: #00cc66;
+}
+
+/* === INCLUDES SECTION === */
+.includes_title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 1.4rem 0 0.8rem 0;
+  opacity: 0.9;
+}
+
+.includes_list {
+  padding: 0;
+  list-style: none;
+  margin: 0 0 2rem 0;
+}
+
+.includes_list li {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.includes_list li::before {
+  content: "•";
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* === EXPAND BUTTON === */
+.expand_btn {
+  width: 100%;
+  padding: .7rem;
+  border-radius: 12px;
+  font-weight: 800;
+  background: #000;
+  color: #fff;
+  margin-bottom: 0.7rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.plan_white .expand_btn {
+  background: #000;
+  color: #fff;
+}
+
+.plan_gold .expand_btn {
+  background: #000;
+  color: #facc15;
+}
+
+.expand_btn:hover {
+  transform: scale(1.03);
+}
+
+/* === EXPANDABLE CONTENT === */
+.expand_content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
+}
+
+.expand_content.open {
+  max-height: 2000px;
+  opacity: 1;
+  padding-top: 1.5rem;
+}
+
+.expand_content h3 {
+  margin: 0 0 0.6rem 0;
+  font-weight: 800;
+}
+
+.expand_content p,
+.expand_content li {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+/* === FIX: CHECK ICON COLOR FOR GOLD CARD === */
+.plan_gold .check_icon {
+  color: #000 !important;
+}
+
+
+
+.expand_content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* === MOBILE === */
+@media (max-width: 768px) {
+  .plan_card {
     text-align: center;
   }
-  
-  .plans_title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 800;
-    margin-bottom: 4rem;
-  }
-  
-  /* === GRID === */
-  .plans_grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 768px) {
-    .plans_grid {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
-    }
-  }
-  
-  /* === CARD === */
-  .plan_card {
-    position: relative;
-    border-radius: 1.5rem;
-    padding: 3rem 2rem;
+
+  .short_list li {
+    justify-content: center;
     text-align: left;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
   }
-  
-  .plan_card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
+
+  .includes_list li {
+    text-align: left;
   }
-  
-  /* === COLORS === */
-  .plan_white {
-    background-color: #fff;
-    color: #000;
+
+  .plan_btn_main {
+    width: 80%;
   }
-  
-  .plan_gold {
-    background-color: #facc15; /* galben auriu */
-    color: #000;
-  }
-  
-  /* === DISCOUNT === */
-  .plan_discount {
-    position: absolute;
-    top: 1.2rem;
-    right: 1.2rem;
-    background-color: #ef4444;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.3rem 0.7rem;
-    border-radius: 6px;
-  }
-  
-  /* === TEXT === */
-  .plan_name {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  
-  .plan_price {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-  }
-  
-  .plan_period {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-bottom: 1.8rem;
-  }
-  
-  /* === BUTTON === */
-  .plan_btn {
-    background-color: #4df53d;
-    color: #000;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: 0.8rem 1.6rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-  
-  .plan_btn:hover {
-    background-color: #16a34a;
-    transform: scale(1.05);
-  }
-  
-  /* === FEATURES === */
-  .plan_list {
-    font-size: 0.95rem;
-    list-style: none;
-    line-height: 1.8;
-    padding-left: 0;
-  }
-  
-  .plan_list li {
-    margin-bottom: 0.3rem;
-  }
-  
-  /* === RESPONSIVE === */
-  @media (max-width: 768px) {
-    .plan_card {
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-    }
-  
-    .plan_list {
-      text-align: left;
-      display: inline-block;
-    }
-  }
-  
+}
