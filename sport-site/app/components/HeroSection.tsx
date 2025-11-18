@@ -29,10 +29,11 @@ export default function HeroSection() {
           <div className="hero_cell"><img src="/images/hero/1.webp" className="hero_gallery_img" /></div>
           <div className="hero_cell"><img src="/images/hero/2.webp" className="hero_gallery_img" /></div>
           <div className="hero_cell"><img src="/images/hero/3.webp" className="hero_gallery_img" /></div>
-          <div className="hero_cell"><img src="/images/hero/4.webp" className="hero_gallery_img" /></div>
-          <div className="hero_cell"><img src="/images/hero/5.webp" className="hero_gallery_img" /></div>
-          <div className="hero_cell"><img src="/images/hero/6.webp" className="hero_gallery_img" /></div>
-        </div>
+          <div className="hero_cell hide_mobile"><img src="/images/hero/4.webp" className="hero_gallery_img" /></div>
+      
+        <div className="hero_cell "><img src="/images/hero/5.webp" className="hero_gallery_img" /></div>
+        <div className="hero_cell hide_mobile"><img src="/images/hero/6.webp" className="hero_gallery_img" /></div>
+  </div>
 
         {/* Play BTN */}
         <div className="hero_play_btn"></div>
