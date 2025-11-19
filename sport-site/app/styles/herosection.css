@@ -105,7 +105,8 @@
 .hero_gallery_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 300px);
+   grid-template-rows: repeat(2, 1fr);
+  height: 100%;
   gap: 8px;
   width: 100%;
   aspect-ratio: 3 / 2;
