@@ -23,8 +23,10 @@
 /* LOGO */
 .nav_logo_img {
   object-fit: contain;
-  width: 140px;
-  height: auto;
+  width: 90px;
+  height: 150px;
+  background: transparent;
+  display: block;
 }
 
 /* LINKS */

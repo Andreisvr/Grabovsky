@@ -32,7 +32,7 @@ const translations: Record<Language, Record<string, string>> = {
       hero_title: "Devino cea mai bună versiune a ta",
       hero_here: "AICI",
       hero_subtext:
-        "Programe personalizate de fitness și nutriție create de expertul în transformări — Artiom Grabovsky.",
+        "Cu Artiom Grabovski — antrenor de fitness profesionist, expert în transformări fizice și specialist în sporturi de forță.",
       hero_button: "Începe acum",
   
       // PLANS SECTION
@@ -188,7 +188,7 @@ plan_advanced: "Consultation",
       hero_title: "Become the best version of yourself",
       hero_here: "HERE",
       hero_subtext:
-        "Personalized fitness and nutrition programs created by transformation expert — Artiom Grabovsky.",
+        "With Artyom Grabovsky — a professional fitness coach, expert in physical transformations, and specialist in strength sports.",
       hero_button: "See what suits you",
   
       // PLANS SECTION
@@ -347,7 +347,7 @@ coach_section_subtitle: "Опыт, результаты и профессион�
       hero_title: "Стань лучшей версией себя",
       hero_here: "ЗДЕСЬ",
       hero_subtext:
-        "Персональные программы тренировок и питания от эксперта по трансформациям — Артёма Грабовского.",
+        "С Артёмом Грабовским — профессиональным фитнес-тренером, экспертом по физическим трансформациям и специалистом в силовых видах спорта.",
       hero_button: "Начать",
   
       // PLANS SECTION

@@ -22,10 +22,11 @@ export default function Navbar() {
               style={{ cursor: "pointer" }}
             >
               <Image
-                src="/images/logo__1.png"
+                src="/images/logogf.png"
                 alt="Grabovsky Fit Logo"
-                width={160}
+                width={140}
                 height={60}
+                priority
                 className="nav_logo_img"
               />
             </div>
