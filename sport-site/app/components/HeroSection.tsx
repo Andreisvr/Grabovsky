@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import "../styles/herosection.css";
+import Link from "next/link";
+
 
 export default function HeroSection() {
   const { t } = useLanguage();
@@ -18,9 +20,11 @@ export default function HeroSection() {
 
         <p className="hero_subtext">{t("hero_subtext")}</p>
 
-        <a href="#plans" className="hero_btn">
-          {t("hero_button")}
-        </a>
+        <Link href="/plans" className="hero_btn premium_btn">
+  <span className="discount_badge">-30%</span>
+  {t("hero_button")}
+</Link>
+
       </div>
 
       {/* BOX CU 6 IMAGINI */}

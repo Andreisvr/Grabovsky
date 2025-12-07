@@ -20,7 +20,35 @@ const translations: Record<Language, Record<string, string>> = {
     coach_section_title: "Despre mine",
     coach_section_subtitle: "Experiență, rezultate și abordare profesională",
 
+
+//payment
+requestform_contact_p: "Email sau Telegram @Name",
+    choose_package: "Alege pachetul dorit",
+validity: "Valabilitate",
+back: "Înapoi",
+scan_to_pay: "Scanează pentru plată",
+open_payment_link: "Deschide linkul de plată",
+sessions: "antrenamente",
+consultation: "consultare",
+consultations: "consultări",
+
+error_name_short: "Numele trebuie să conțină cel puțin 3 caractere",
+error_invalid_contact: "Contact invalid — introdu un email valid sau un cont Telegram în format @nume",
+
+months: "luni",
+month: "lună",
+
+payment_info: "Informații: plata se face prin MIA cu limite de 5000 per transfer și 10000 zilnic. Dacă aveți întrebări sau sunteți nesiguri, puteți lăsa o cerere fără plată și vă vom contacta. De asemenea, puteți face transfer bancar (confirmare 1–5 zile lucrătoare). Pentru cei din afara țării – doar prin transfer sau contactați-ne pentru soluții. Întrebări: @grabovsky_fitness.",
+go_to_request: "→ Trimite cerere",
+continue: "Continuă",
   
+
+thankyou_title: "Mulțumim că ați ales să deveniți mai buni!",
+thankyou_subtitle: "Vă apreciem încrederea și dorința de progres! Echipa Grabovsky Fitness vă va contacta în curând cu detaliile ulterioare.",
+thankyou_note: "Dacă în decurs de 3 zile lucrătoare nu primiți niciun mesaj, nu ezitați să contactați direct @grabovsky_fitness pe Telegram.",
+thankyou_refund: "În cazul apariției unor erori sau nereguli din partea noastră, suma achitată va fi restituită integral.",
+thankyou_home: "← Înapoi la pagina principală",
+
       // NAVBAR
       plans: "Planuri",
       coach: "Antrenor",
@@ -137,7 +165,7 @@ plan_personal_short4: "Ideal pentru masă, slăbire, recuperare",
 plan_personal_short5: "Progres garantat & control permanent",
 
 plan_personal_details_title: "Descriere detaliată",
-plan_personal_details_text: "Antrenamentele personale sunt concepute pentru rezultate rapide și sigure. Corectez tehnica, adaptez exercițiile, monitorizez intensitatea și structurez progresia. Perfect pentru începători, intermediari și avansați.",
+plan_personal_details_text: "Antrenamentele personale reprezintă cea mai mare eficiență: controlul tehnicii, adaptarea exercițiilor, monitorizarea efortului și progresia atent planificată. Sunt potrivite atât pentru începători, cât și pentru sportivi experimentați. Important: antrenamentele personale au loc la sala Martis Toro Center Chișinău, iar costul abonamentului pentru sală nu este inclus în prețul serviciilor.",
 
 plan_personal_price_title: "Prețuri",
 plan_personal_price1: "1 antrenament — 600 MDL (~30 EUR)",
@@ -173,10 +201,36 @@ plan_advanced: "Consultare",
     en: {
 
 
+      //payment:
+      requestform_contact_p: "Email or Telegram @Name",
+      choose_package: "Choose your package",
+validity: "Validity",
+back: "Back",
+scan_to_pay: "Scan to pay",
+open_payment_link: "Open payment link",
+sessions: "sessions",
+consultation: "consultation",
+consultations: "consultations",
+
+error_name_short: "Name must have at least 3 characters",
+error_invalid_contact: "Invalid contact — please enter a valid email or Telegram handle in the format @name",
+
+months: "months",
+month: "month",
+payment_info: "Information: payment is made via MIA with limits of 5000 per transfer and 10000 per day. If you have any questions or feel unsure, you can submit a request without payment and we will contact you. You can also pay by bank transfer (confirmation in 1–5 business days). For clients outside the country — payment only via transfer or contact us to find a solution. Questions: @grabovsky_fitness.",
+go_to_request: "→ Send request",
+continue: "Continue",
+
+
+
       plan_basic: "Online",
 plan_transform: "In person",
 plan_advanced: "Consultation",
-
+thankyou_title: "Thank you for choosing to become better!",
+thankyou_subtitle: "We appreciate your trust and commitment to progress! The Grabovsky Fitness team will contact you soon with further details.",
+thankyou_note: "If you don’t receive a message within 3 business days, please contact @grabovsky_fitness directly via Telegram.",
+thankyou_refund: "In case of any issues or errors on our side, the paid amount will be fully refunded.",
+thankyou_home: "← Back to Home",
    // NAVBAR
       plans: "Plans",
       coach: "Coach",
@@ -189,7 +243,7 @@ plan_advanced: "Consultation",
       hero_here: "HERE",
       hero_subtext:
         "With Artyom Grabovsky — a professional fitness coach, expert in physical transformations, and specialist in strength sports.",
-      hero_button: "See what suits you",
+      hero_button: "Start",
   
       // PLANS SECTION
       plans_title: "TRAINING PLANS TO FIT YOUR GOALS",
@@ -297,7 +351,7 @@ plan_personal_short4: "For muscle gain, fat loss, rehab",
 plan_personal_short5: "Structured progression",
 
 plan_personal_details_title: "Detailed description",
-plan_personal_details_text: "Personal Training provides full technique control, safe progression, individualized exercises and maximum efficiency. Ideal for beginners and advanced athletes.",
+plan_personal_details_text: "Personal training means maximum efficiency: technique control, exercise adaptation, load monitoring, and carefully planned progression. Suitable for both beginners and experienced athletes.Important: personal training sessions take place at Martis Toro Center Chișinău, and the gym membership fee is not included in the service price.",
 
 plan_personal_price_title: "Pricing",
 plan_personal_price1: "1 session — 600 MDL (~30 EUR)",
@@ -336,6 +390,34 @@ plan_advanced: "Консультация",
 coach_section_subtitle: "Опыт, результаты и профессиональный подход",
 
   
+
+//payment:
+requestform_contact_p: "Email или Telegram @Name",
+choose_package: "Выбери нужный пакет",
+validity: "Срок действия",
+back: "Назад",
+scan_to_pay: "Отсканируй для оплаты",
+open_payment_link: "Открыть ссылку для оплаты",
+sessions: "тренировок",
+consultation: "консультация",
+consultations: "консультации",
+
+error_name_short: "Имя должно содержать минимум 3 символа",
+error_invalid_contact: "Неверный контакт — укажи правильный email или Telegram в формате @имя",
+
+months: "месяцев",
+month: "месяц",
+
+payment_info: "Информация: оплата производится через MIA с лимитами 5000 за перевод и 10000 в день. Если у вас есть вопросы или вы не уверены, вы можете оставить заявку без оплаты, и мы с вами свяжемся. Также можно оплатить банковским переводом (подтверждение занимает 1–5 рабочих дней). Для клиентов из-за рубежа — только перевод или свяжитесь с нами для поиска решения. Вопросы: @grabovsky_fitness.",
+go_to_request: "→ Отправить заявку",
+continue: "Продолжить",
+thankyou_title: "Спасибо, что выбрали стать лучше!",
+thankyou_subtitle: "Мы ценим ваше доверие и стремление к развитию! Команда Grabovsky Fitness свяжется с вами в ближайшее время для уточнения деталей.",
+thankyou_note: "Если в течение 3 рабочих дней вы не получите сообщение, пожалуйста, свяжитесь напрямую с @grabovsky_fitness в Telegram.",
+thankyou_refund: "В случае ошибок или проблем с нашей стороны оплаченная сумма будет полностью возвращена.",
+thankyou_home: "← На главную",
+
+
       // NAVBAR
       plans: "Планы",
       coach: "Тренер",
@@ -416,7 +498,7 @@ plan_personal_short4: "Для массы, жиросжигания, реабил
 plan_personal_short5: "Структурированная прогрессия",
 
 plan_personal_details_title: "Подробное описание",
-plan_personal_details_text: "Персональные тренировки — это максимальная эффективность: контроль техники, адаптация упражнений, мониторинг нагрузки и продуманная прогрессия. Подходит как новичкам, так и опытным спортсменам.",
+plan_personal_details_text: "Персональные тренировки — это максимальная эффективность: контроль техники, адаптация упражнений, мониторинг нагрузки и продуманная прогрессия. Подходит как новичкам, так и опытным спортсменам.Важно персональные тренеровки проводится в спортзале мартис Toro Center кишинев для этих тренеровок цена абонимента не входит в стоимость услуг",
 
 plan_personal_price_title: "Стоимость",
 plan_personal_price1: "1 тренировка — 600 MDL (~30 EUR)",

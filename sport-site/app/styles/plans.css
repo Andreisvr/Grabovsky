@@ -1,42 +1,35 @@
-/* ===========================================
-   PLANS SECTION — PREMIUM RESPONSIVE 2025
-   =========================================== */
-
-/* SECTION */
-.plans_section {
+.plan_section {
   background-color: #000;
   color: #fff;
   padding: 5rem 1.5rem;
   text-align: center;
 }
 
-.plans_title {
+.plan_title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   margin-bottom: 3.5rem;
 }
 
 /* GRID */
-.plans_grid {
+.plan_grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2.3rem;
 }
 
 @media (min-width: 800px) {
-  .plans_grid {
+  .plan_grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ===========================================
-   CARD BASE
-   =========================================== */
+/* CARD BASE */
 .plan_card {
   position: relative;
   border-radius: 1.8rem;
-  padding: 2.4rem 1.8rem;          /* mai compact */
-  max-width: 550px;                /* card mai lat */
+  padding: 2.4rem 1.8rem;
+  max-width: 550px;
   margin: 0 auto;
   text-align: left;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
@@ -50,7 +43,6 @@
   transform: translateY(-6px);
 }
 
-/* GOLD CARD */
 .plan_gold {
   background: linear-gradient(180deg, #facc15, #eab308);
   color: #000;
@@ -68,7 +60,7 @@
 }
 
 /* TITLE */
-.plan_title {
+.plan_card_title {
   font-size: 1.9rem;
   font-weight: 900;
   margin-bottom: 1rem;
@@ -93,12 +85,12 @@
   transform: scale(1.05);
 }
 
-.plan_gold .plan_btn_main {
+.plan_gold_btn {
   background: #000;
   color: #facc15;
 }
 
-.plan_gold .plan_btn_main:hover {
+.plan_gold_btn:hover {
   background: #1a1a1a;
 }
 
@@ -114,19 +106,17 @@
   background: rgba(0, 0, 0, 0.25);
 }
 
-/* ===========================================
-   SHORT LIST BENEFITS
-   =========================================== */
-.short_list {
+/* SHORT LIST */
+.plan_short_list {
   list-style: none;
   padding: 0;
   margin: 0 0 1.4rem 0;
 }
 
-.short_list li {
+.plan_short_list li {
   display: grid;
-  grid-template-columns: 24px 1fr; /* icon fix + text */
-  align-items: center;             /* vertical center ALWAYS */
+  grid-template-columns: 24px 1fr;
+  align-items: center;
   column-gap: 10px;
   font-size: 1.05rem;
   opacity: 0.9;
@@ -134,31 +124,19 @@
   font-weight: 500;
 }
 
-
-.check_icon {
+.plan_check_icon {
   width: 24px !important;
   height: 24px !important;
   stroke-width: 2.4;
   color: #22c55e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-
-/* .plan_gold .check_icon {
-  color: #000;
-} */
-
-.plan_gold .check_icon {
+.plan_gold .plan_check_icon {
   color: #000 !important;
 }
 
-
-/* ===========================================
-   EXPAND BUTTON
-   =========================================== */
-.expand_btn {
+/* EXPAND BUTTON */
+.plan_expand_btn {
   width: 100%;
   padding: 0.7rem;
   border-radius: 12px;
@@ -171,16 +149,16 @@
   text-align: center;
 }
 
-.plan_gold .expand_btn {
+.plan_gold .plan_expand_btn {
   color: #facc15;
 }
 
-.expand_btn:hover {
+.plan_expand_btn:hover {
   transform: scale(1.03);
 }
 
 /* EXPAND CONTENT */
-.expand_content {
+.plan_expand_content {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -188,54 +166,104 @@
   transition: max-height 0.45s ease, opacity 0.3s ease, padding 0.35s ease;
 }
 
-.expand_content.open {
+.plan_expand_content.open {
   max-height: 1500px;
   opacity: 1;
   padding-top: 1.3rem;
 }
 
-.expand_content h3 {
+.plan_expand_content h3 {
   margin: 0 0 0.5rem 0;
   font-weight: 800;
 }
 
-.expand_content p {
+.plan_expand_content p {
   font-size: 1rem;
   line-height: 1.55;
   opacity: 0.95;
   margin-bottom: 0.7rem;
 }
 
-/* ===========================================
-   RESPONSIVE (MOBILE)
-   =========================================== */
+/* DISCOUNT TAG */
+.plan_btn_wrap {
+  position: relative;
+  display: inline-block;
+  width: 95%;
+}
+
+.plan_discount_tag {
+  position: absolute;
+  top: -1px;
+  right: 163px;
+  background: linear-gradient(135deg, #ff0055, #ff7b00);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 6px 10px;
+  border-radius: 10px 10px 0 10px;
+  box-shadow: 0 0 12px rgba(255, 80, 0, 0.5);
+  transform: rotate(7deg);
+  animation: plan_discountPulse 2s infinite ease-in-out;
+  z-index: 2;
+}
+
+@keyframes plan_discountPulse {
+  0%, 100% {
+    transform: rotate(7deg) scale(1);
+    box-shadow: 0 0 10px rgba(255, 80, 0, 0.5);
+  }
+  50% {
+    transform: rotate(7deg) scale(1.12);
+    box-shadow: 0 0 20px rgba(255, 120, 0, 0.8);
+  }
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
+  .plan_grid {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .plan_card {
-    width: 94%;
+    width: 100%;
+   
+    position: relative;
     padding: 2rem 1.5rem;
     text-align: center;
+    border-radius: 1.5rem;
   }
-
-  .plan_title {
-    font-size: 1.7rem;
+  .plan_discount_tag {
+    position: absolute;
+    top: -1px;
+    right: 23px;
   }
-
   .plan_btn_main {
     width: 80%;
   }
 
-  .short_list li {
+  .plan_card_title {
+    font-size: 1.7rem;
+  }
+
+  .plan_short_list li {
     justify-content: center;
     text-align: left;
     font-size: 1rem;
   }
 
-  .check_icon {
+  .plan_check_icon {
     width: 20px;
     height: 20px;
   }
 
-  .expand_content p {
+  .plan_expand_content p {
     text-align: left;
+  }
+
+  .plan_btn_wrap {
+    width: 98%;
   }
 }

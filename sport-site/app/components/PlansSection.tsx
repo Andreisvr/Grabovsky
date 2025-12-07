@@ -105,10 +105,10 @@ export default function PlansSection() {
   ];
 
   return (
-    <section className="plans_section" id="plans">
-      <h2 className="plans_title">{t("plans_title")}</h2>
+    <section className="plan_section" id="plans">
+      <h2 className="plan_title">{t("plans_title")}</h2>
 
-      <div className="plans_grid">
+      <div className="plan_grid">
         {services.map((s) => {
           const isOpen = open === s.key;
 
@@ -121,38 +121,41 @@ export default function PlansSection() {
               <div className="plan_tag">{s.tag}</div>
 
               {/* TITLE */}
-              <h3 className="plan_title">{s.title}</h3>
+              <h3 className="plan_card_title">{s.title}</h3>
 
               {/* MAIN BUTTON */}
-              <button
-                  onClick={() => {
-                    const el = document.getElementById("request");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className={`plan_btn_main ${s.highlight ? "gold_btn" : ""}`}
+              <div className="plan_btn_wrap">
+                <span className="plan_discount_tag">
+                  {s.key === "online" && "-30%"}
+                  {s.key === "personal" && "-25%"}
+                  {s.key === "consult" && "-20%"}
+                </span>
+
+                <button
+                  onClick={() => (window.location.href = "/plans")}
+                  className={`plan_btn_main ${s.highlight ? "plan_gold_btn" : ""}`}
                 >
                   {t("plans_start")}
                 </button>
+              </div>
 
               <div className="plan_divider"></div>
 
               {/* BENEFITS */}
-              <ul className="short_list">
+              <ul className="plan_short_list">
                 {s.bullets.map((b: string, i: number) => (
                   <li key={i}>
-                    <FiCheckCircle className="check_icon" /> {b}
+                    <FiCheckCircle className="plan_check_icon" /> {b}
                   </li>
                 ))}
               </ul>
 
-              
-
               {/* EXPAND */}
-              <button className="expand_btn" onClick={() => toggle(s.key)}>
+              <button className="plan_expand_btn" onClick={() => toggle(s.key)}>
                 {isOpen ? t("plans_hide") : t("plans_show")}
               </button>
 
-              <div className={`expand_content ${isOpen ? "open" : ""}`}>
+              <div className={`plan_expand_content ${isOpen ? "open" : ""}`}>
                 {s.details}
               </div>
             </div>

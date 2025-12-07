@@ -42,7 +42,7 @@
     margin-bottom: 2rem;
   }
   
-  .hero_btn {
+  /* .hero_btn {
     display: inline-block;
     background: #f8d22a;
     color: #000;
@@ -52,12 +52,12 @@
     border-radius: 16px;
     transition: 0.25s ease;
     text-decoration: none;
-  }
+  } */
   
-  .hero_btn:hover {
+  /* .hero_btn:hover {
     background: #ffe670;
     transform: scale(1.05);
-  }
+  } */
   
   /* ======================
      GALLERY BOX (clickable)
@@ -245,3 +245,57 @@
     color: #f8d22a;
   }
   
+
+
+
+  /* ======================
+   PREMIUM DISCOUNT BUTTON
+   ====================== */
+
+.premium_btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #f8d22a 0%, #ffd84a 50%, #f8d22a 100%);
+  color: #000;
+  font-weight: 800;
+  padding: 1rem 3.5rem 1rem 3rem;
+  border-radius: 18px;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 0 25px rgba(248, 210, 42, 0.4);
+  transition: all 0.3s ease;
+}
+
+.premium_btn:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #ffe670, #fff78a);
+  box-shadow: 0 0 40px rgba(255, 230, 112, 0.7);
+}
+
+/* Badge cu reducere */
+.discount_badge {
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  background: linear-gradient(135deg, #ff0055, #ff6a00);
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+  border-radius: 10px 10px 0 10px;
+  box-shadow: 0 0 10px rgba(255, 90, 0, 0.4);
+  transform: rotate(8deg);
+  animation: badgePulse 1.8s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: rotate(8deg) scale(1);
+    box-shadow: 0 0 10px rgba(255, 90, 0, 0.5);
+  }
+  50% {
+    transform: rotate(8deg) scale(1.15);
+    box-shadow: 0 0 20px rgba(255, 120, 0, 0.8);
+  }
+}

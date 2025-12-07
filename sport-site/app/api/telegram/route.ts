@@ -16,27 +16,52 @@ export async function POST(request: Request) {
 
     let text = "";
 
-    // ======================================================================
-    // 🔥 1) FORMULARUL MARE — dacă există NAME & CONTACT => format complet
-    // ======================================================================
-    if (body.name && body.contact) {
+    // =============================================================
+    // 🟡 0) DETECTARE MESAJ DE PLATĂ (PAYMENT)
+    // =============================================================
+    if (body.payment === true || (body.message && body.message.includes("PAYMENT"))) {
+      const now = new Date().toLocaleString("ro-RO", {
+        timeZone: "Europe/Chisinau",
+      });
+    
+      const { name, contact, plan, option } = body;
+    
+      text = `
+    💳 *NEW PAYMENT REQUEST*
+    ──────────────────────
+    👤 *Nume:* ${name || "-"}
+    📞 *Contact:* ${contact || "-"}
+    📦 *Plan:* ${plan || "-"}
+    🎯 *Pachet:* ${option || "-"}
+    📅 *Data completării:* ${now}
+    💰 *Status:* Payment – necesită verificare
+    ──────────────────────
+    🌐 Grabovsky Fitness Website
+      `;
+    }
+    
+
+    // =============================================================
+    // 🔥 1) FORMULARUL PRINCIPAL — NAME + CONTACT => format complet
+    // =============================================================
+    else if (body.name && body.contact) {
       const { name, contact, message, meeting } = body;
 
       text = `
 📩 *NEW FORM REQUEST*
---------------------------------
+──────────────────────
 👤 *Name:* ${name}
 📞 *Contact:* ${contact}
 📝 *Message:* ${message || "-"}
 📌 *Meeting Type:* ${meeting || "-"}
---------------------------------
+──────────────────────
 Sent from website 🌐
       `;
     }
 
-    // ======================================================================
-    // 🔥 2) FORMULAR COACH — dacă nu există name/contact, dar există message
-    // ======================================================================
+    // =============================================================
+    // 🔥 2) FORMULAR COACH — doar MESSAGE
+    // =============================================================
     else if (body.message) {
       text = body.message;
     }
@@ -48,7 +73,9 @@ Sent from website 🌐
       );
     }
 
-    // 🚀 Trimitem mesajul la Telegram
+    // =============================================================
+    // 🚀 TRIMITEREA MESAJULUI CĂTRE TELEGRAM
+    // =============================================================
     const response = await fetch(
       `https://api.telegram.org/bot${botToken}/sendMessage`,
       {
@@ -57,8 +84,8 @@ Sent from website 🌐
         body: JSON.stringify({
           chat_id: chatId,
           text,
-          parse_mode: "Markdown"
-        })
+          parse_mode: "Markdown",
+        }),
       }
     );
 
@@ -72,7 +99,6 @@ Sent from website 🌐
     }
 
     return NextResponse.json({ success: true });
-
   } catch (error) {
     return NextResponse.json(
       { success: false, error: String(error) },
