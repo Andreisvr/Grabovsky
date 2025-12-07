@@ -1,0 +1,494 @@
+/* ===========================================
+   GLOBAL STRUCTURE & COLORS
+   =========================================== */
+   :root {
+    --color-bg: #000;
+    --color-card: linear-gradient(180deg, #111, #0a0a0a);
+    --color-text: #fff;
+    --color-text-muted: #ccc;
+    --color-accent: #f8d22a;
+    --color-accent-light: #ffe670;
+    --radius-lg: 1.5rem;
+    --radius-md: 12px;
+    --transition: 0.3s ease;
+  }
+  
+  /* MAIN WRAPPER */
+  .plans_wrapper {
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+  }
+  
+  .plans_section {
+    padding: 6rem 1rem 4rem;
+    text-align: center;
+  }
+  
+  .plans_title {
+    color: var(--color-accent);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 3rem;
+  }
+  
+  /* ===========================================
+     STEP 1 – MAIN PLAN CARDS
+     =========================================== */
+  .plans_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  
+  .plan_card_main {
+    background: var(--color-card);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .plan_card_main:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 35px rgba(255, 230, 100, 0.25);
+  }
+  
+  .plan_card_main h2 {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+  
+  .plan_card_main p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .plan_card_main button {
+    border: none;
+    padding: 0.9rem 2rem;
+    font-weight: 800;
+    font-size: 1.1rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    background: var(--color-accent);
+    color: #000;
+    transition: var(--transition);
+  }
+  
+  .plan_card_main button:hover {
+    background: var(--color-accent-light);
+    transform: scale(1.05);
+  }
+  
+  /* ===========================================
+     STEP 2 – OPTIONS (Packages)
+     =========================================== */
+  .options_container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .options_subtext {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+  
+  .options_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .option_card {
+    background: var(--color-card);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 2.2rem 1.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .option_card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-6px);
+    box-shadow: 0 0 35px rgba(255, 230, 100, 0.25);
+  }
+  
+  .option_card h3 {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .option_price {
+    margin-bottom: 1rem;
+  }
+  
+  .old_price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+  
+  .new_price {
+    color: var(--color-text);
+    font-size: 1.7rem;
+    font-weight: 900;
+  }
+  
+  .eur_price {
+    color: #bbb;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+  }
+  
+  .option_note {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
+  }
+  
+  /* Discount Tag */
+  .discount_tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #ff0055, #ff7b00);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    padding: 4px 10px;
+    border-radius: 10px;
+    transform: rotate(6deg);
+    box-shadow: 0 0 10px rgba(255, 90, 0, 0.4);
+    animation: pulse 1.8s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: rotate(6deg) scale(1); }
+    50% { transform: rotate(6deg) scale(1.15); }
+  }
+  
+  /* ===========================================
+     FORM STEP
+     =========================================== */
+/* ===========================================
+   FORM STEP – PREMIUM VISIBILITY
+   =========================================== */
+   .payment_form {
+    max-width: 480px;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 0 30px rgba(248, 210, 42, 0.1);
+    transition: 0.3s ease;
+  }
+  
+  .payment_form:hover {
+    box-shadow: 0 0 40px rgba(248, 210, 42, 0.25);
+    border-color: rgba(248, 210, 42, 0.5);
+  }
+  
+  .payment_form h2 {
+    color: var(--color-accent);
+    font-size: 1.7rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .payment_form p {
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  /* INPUTS */
+  .payment_form input {
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    transition: 0.3s ease;
+  }
+  
+  .payment_form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .payment_form input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 12px rgba(248, 210, 42, 0.4);
+    background: rgba(20, 20, 20, 0.9);
+  }
+  
+  /* BUTTONS */
+  .payment_form button {
+    background: var(--color-accent);
+    border: none;
+    padding: 0.9rem;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #000;
+    cursor: pointer;
+    transition: 0.25s ease;
+  }
+  
+  .payment_form button:hover {
+    background: var(--color-accent-light);
+    transform: scale(1.03);
+  }
+  
+  /* ERROR MESSAGE */
+  .form_error {
+    color: #ff4d4d;
+    font-size: 0.95rem;
+    margin-top: -4px;
+  }
+  
+  /* BACK BUTTON */
+  .back_btn {
+    margin-top: 1rem;
+    background: none;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 0.7rem 1.6rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-weight: 600;
+  }
+  
+  .back_btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  
+  /* ===========================================
+     RESPONSIVE FORM
+     =========================================== */
+  @media (max-width: 768px) {
+    .payment_form {
+      width: 90%;
+      padding: 2rem 1.5rem;
+    }
+  
+    .payment_form h2 {
+      font-size: 1.5rem;
+    }
+  
+    .payment_form button {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .payment_form {
+      padding: 1.8rem 1.2rem;
+    }
+  
+    .payment_form input {
+      font-size: 0.95rem;
+      padding: 0.8rem;
+    }
+  
+    .payment_form button {
+      padding: 0.8rem;
+    }
+  }
+  
+  /* ===========================================
+     QR STEP
+     =========================================== */
+  .qr_section {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .qr_link {
+    color: var(--color-accent);
+    text-decoration: underline;
+    display: block;
+    margin-top: 1rem;
+    font-weight: 700;
+  }
+  
+  .qr_image {
+    display: block;
+    margin: 1rem auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.6s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* ===========================================
+     BUTTONS – BACK
+     =========================================== */
+  .back_btn {
+    margin-top: 2rem;
+    background: none;
+    color: var(--color-text);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .back_btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  
+  /* ===========================================
+     RESPONSIVE DESIGN
+     =========================================== */
+  @media (max-width: 1024px) {
+    .plans_grid {
+      padding: 0 1.5rem;
+    }
+  
+    .plan_card_main {
+      padding: 2rem 1.5rem;
+    }
+  
+    .options_grid {
+      gap: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .plans_title {
+      font-size: 2rem;
+    }
+  
+    .plan_card_main {
+      text-align: center;
+    }
+  
+    .option_card {
+      padding: 1.8rem 1.2rem;
+    }
+  
+    .new_price {
+      font-size: 1.4rem;
+    }
+  
+    .discount_tag {
+      top: 8px;
+      right: 10px;
+      font-size: 0.8rem;
+    }
+  
+    .payment_form {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .plans_section {
+      margin-top: 5vh;
+      padding: 4rem 0.5rem;
+    }
+  
+    .plans_title {
+      font-size: 1.7rem;
+    }
+  
+    .plan_card_main,
+    .option_card {
+      padding: 1.5rem 1rem;
+    }
+  
+    .plan_card_main h2 {
+      font-size: 1.4rem;
+    }
+  
+    .option_card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .new_price {
+      font-size: 1.3rem;
+    }
+  
+    .option_note {
+      font-size: 0.85rem;
+    }
+  
+    .payment_form input {
+      font-size: 0.95rem;
+    }
+  
+    .payment_form button {
+      font-size: 1rem;
+    }
+  
+    .qr_image {
+      width: 180px;
+      height: 180px;
+    }
+  }
+  
+
+
+
+  .payment_info_text {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .request_btn,
+  .continue_btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #000;
+    font-weight: 800;
+    padding: 0.9rem 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+  }
+  
+  .request_btn:hover,
+  .continue_btn:hover {
+    background: var(--color-accent-light);
+    transform: scale(1.05);
+  }
+  
+
+
+
+  
